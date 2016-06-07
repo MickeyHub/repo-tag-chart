@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainViewController">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eik-zE-pGt">
+                    <rect key="frame" x="390" y="227" width="75" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="iiq-R3-gS8"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d5R-HG-VLL">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                </button>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ocH-dz-fa3">
+                    <rect key="frame" x="20" y="20" width="440" height="171"/>
+                </customView>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="9j6-Px-ad4">
+                    <rect key="frame" x="20" y="209" width="440" height="5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="DKX-V1-3Ue"/>
+                    </constraints>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocp-Db-4Xs">
+                    <rect key="frame" x="20" y="232" width="182" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="QDS-dT-jaO"/>
+                    </constraints>
+                    <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="XgU-7V-MqL">
+                        <font key="font" metaFont="smallSystem"/>
+                        <url key="url" string="file://localhost/Applications/"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
+                    </pathCell>
+                </pathControl>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ocH-dz-fa3" firstAttribute="leading" secondItem="Ocp-Db-4Xs" secondAttribute="leading" id="9By-kI-OyS"/>
+                <constraint firstItem="eik-zE-pGt" firstAttribute="centerY" secondItem="Ocp-Db-4Xs" secondAttribute="centerY" id="9bd-JJ-4G2"/>
+                <constraint firstItem="ocH-dz-fa3" firstAttribute="leading" secondItem="9j6-Px-ad4" secondAttribute="leading" id="BSi-v4-q10"/>
+                <constraint firstItem="ocH-dz-fa3" firstAttribute="trailing" secondItem="9j6-Px-ad4" secondAttribute="trailing" id="Blk-xF-ejO"/>
+                <constraint firstItem="eik-zE-pGt" firstAttribute="trailing" secondItem="ocH-dz-fa3" secondAttribute="trailing" id="Khm-VC-h1n"/>
+                <constraint firstAttribute="trailing" secondItem="ocH-dz-fa3" secondAttribute="trailing" constant="20" id="PAm-iO-FOw"/>
+                <constraint firstAttribute="bottom" secondItem="ocH-dz-fa3" secondAttribute="bottom" constant="20" id="U9e-Zd-j3i"/>
+                <constraint firstItem="ocH-dz-fa3" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Zk0-Oq-wGf"/>
+                <constraint firstItem="Ocp-Db-4Xs" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="fq7-Xf-vbj"/>
+                <constraint firstItem="ocH-dz-fa3" firstAttribute="top" secondItem="9j6-Px-ad4" secondAttribute="bottom" constant="20" id="knF-yE-A2X"/>
+                <constraint firstItem="9j6-Px-ad4" firstAttribute="top" secondItem="Ocp-Db-4Xs" secondAttribute="bottom" constant="20" id="weP-k4-NHo"/>
+            </constraints>
+            <point key="canvasLocation" x="322" y="429"/>
+        </customView>
+    </objects>
+</document>
