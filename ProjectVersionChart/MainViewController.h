@@ -7,7 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@import Charts;
 
 @interface MainViewController : NSViewController
+
+@property (weak) IBOutlet LineChartView *lineChartView;
+- (IBAction)generate:(NSButton *)sender;
+- (IBAction)didPathSelected:(NSPathControl *)sender;
 
 @end

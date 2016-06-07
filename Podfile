@@ -5,5 +5,4 @@ use_frameworks!
 
 target 'ProjectVersionChart' do
   pod 'Charts', '~> 2.2.5'
-  pod 'ObjectiveGit', '~> 0.1'
 end

@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="lineChartView" destination="ocH-dz-fa3" id="QWj-kK-wos"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -25,8 +26,11 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="generate:" target="-2" id="g3M-LT-MCD"/>
+                    </connections>
                 </button>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ocH-dz-fa3">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ocH-dz-fa3" customClass="LineChartView" customModule="Charts">
                     <rect key="frame" x="20" y="20" width="440" height="171"/>
                 </customView>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="9j6-Px-ad4">
@@ -38,16 +42,18 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocp-Db-4Xs">
-                    <rect key="frame" x="20" y="232" width="182" height="20"/>
+                <pathControl verticalHuggingPriority="750" misplaced="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocp-Db-4Xs">
+                    <rect key="frame" x="20" y="230" width="182" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="QDS-dT-jaO"/>
                     </constraints>
-                    <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="XgU-7V-MqL">
+                    <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="XgU-7V-MqL">
                         <font key="font" metaFont="smallSystem"/>
-                        <url key="url" string="file://localhost/Applications/"/>
-                        <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
+                        <url key="url" string="file:///Users/shayanbo/Documents/Project/apollon/"/>
                     </pathCell>
+                    <connections>
+                        <action selector="didPathSelected:" target="-2" id="LYN-95-wKo"/>
+                    </connections>
                 </pathControl>
             </subviews>
             <constraints>
@@ -63,7 +69,7 @@
                 <constraint firstItem="ocH-dz-fa3" firstAttribute="top" secondItem="9j6-Px-ad4" secondAttribute="bottom" constant="20" id="knF-yE-A2X"/>
                 <constraint firstItem="9j6-Px-ad4" firstAttribute="top" secondItem="Ocp-Db-4Xs" secondAttribute="bottom" constant="20" id="weP-k4-NHo"/>
             </constraints>
-            <point key="canvasLocation" x="322" y="429"/>
+            <point key="canvasLocation" x="-139" y="192"/>
         </customView>
     </objects>
 </document>

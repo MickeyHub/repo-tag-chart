@@ -2,17 +2,11 @@ PODS:
   - Charts (2.2.5):
     - Charts/Core (= 2.2.5)
   - Charts/Core (2.2.5)
-  - libgit2 (0.18.0beta0)
-  - ObjectiveGit (0.1):
-    - libgit2 (= 0.18.0beta0)
 
 DEPENDENCIES:
   - Charts (~> 2.2.5)
-  - ObjectiveGit (~> 0.1)
 
 SPEC CHECKSUMS:
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
-  libgit2: 175f73f77b72d22f51348a30554c113d55ea9c3e
-  ObjectiveGit: 823aae99d5995932d613939c21923db8057345a4
 
 COCOAPODS: 0.39.0
