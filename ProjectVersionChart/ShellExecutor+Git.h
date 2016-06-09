@@ -10,10 +10,10 @@
 
 @interface ShellExecutor (Git)
 
-+(BOOL) isSuccessPreviousCommand;
-+(NSUInteger) gitCommitCountForTag:(NSString *)tagName;
-+(NSArray<NSString *> *) gitBranchs;
-+(NSArray<NSString *> *) gitTags;
-+(NSArray<NSString *> *) gitRemotes;
+-(BOOL) isSuccessPreviousCommand;
+-(NSUInteger) gitCommitCountForTag:(NSString *)tagName;
+-(NSArray<NSString *> *) gitBranchs;
+-(NSArray<NSString *> *) gitTags;
+-(NSArray<NSString *> *) gitRemotes;
 
 @end

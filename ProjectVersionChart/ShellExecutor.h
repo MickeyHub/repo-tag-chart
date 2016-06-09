@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShellConfiguration.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @interface ShellExecutor : NSObject
 
-+(nonnull instancetype) shell;
+@property (nonatomic, strong) ShellConfiguration *shellConfiguration;
 
-+(NSString *)executeShell:(NSString *)shellCommend;
++(nonnull instancetype) defaultShellExecutor;
+
++(nonnull instancetype) shellExecutorWithConfiguration:(ShellConfiguration * _Nonnull)config;
+
+-(nullable NSString *)executeShell:(NSString *)shellCommend;
 
 @end
+NS_ASSUME_NONNULL_END

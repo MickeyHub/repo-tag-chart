@@ -13,21 +13,27 @@
 
 +(nonnull instancetype) defaultShellExecutor {
     
-    static ShellExecutor *instance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [ShellExecutor new];
-    });
-    return instance;
+    return [self shellExecutorWithConfiguration:[ShellConfiguration defaultConfiguration]];
 }
 
-+(NSString *)executeShell:(NSString *)shellCommend{
++(nonnull instancetype) shellExecutorWithConfiguration:(ShellConfiguration * _Nonnull)config {
+    
+    ShellExecutor *executor = [ShellExecutor new];
+    executor.shellConfiguration = config;
+    return executor;
+}
+
+-(nullable NSString *)executeShell:(NSString *)shellCommend{
     
     NSTask *task = [NSTask new];
-    task.launchPath = @"/bin/bash";
+    
+    task.launchPath = self.shellConfiguration.launchPath;
     task.arguments = @[@"-c", shellCommend];
-    task.standardOutput = [NSPipe pipe];
-    task.currentDirectoryPath = @"~/Documents/Project/apollon";
+    NSPipe *pipe = [NSPipe new];
+    task.standardOutput = pipe;
+    task.standardError = pipe;
+    task.currentDirectoryPath = self.shellConfiguration.currentDirectoryPath;
+    
     [task launch];
     [task waitUntilExit];
     

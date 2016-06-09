@@ -7,39 +7,43 @@
 //
 
 #import "ShellExecutor+Git.h"
+#import "NSArray+Extension.h"
 
 @implementation ShellExecutor (Git)
 
-+(BOOL) isSuccessPreviousCommand{
+-(BOOL) isSuccessPreviousCommand{
     
     NSString *log = [self executeShell:@"echo $?"];
     return [@"0" isEqualToString:log];
 }
 
-+(NSUInteger) gitCommitCountForTag:(NSString *)tagName{
+-(NSUInteger) gitCommitCountForTag:(NSString *)tagName{
     
     NSString *log = [self executeShell:[NSString stringWithFormat:@"git rev-list --count %@", tagName]];
     return [log integerValue];
 }
 
-+(NSArray<NSString *> *) gitBranchs {
+-(NSArray<NSString *> *) gitBranchs {
     
     NSString *log = [self executeShell:@"git branch -a --no-color | awk -F ' +' '! /\\(no branch\\)/ {print $2}'"];
-    NSArray<NSString *> *branchs = [log componentsSeparatedByString:@"\n"];
-    return branchs;
+    NSArray<NSString *> *branches = [log componentsSeparatedByString:@"\n"];
+    branches = [branches arrayByRemovingLastObject];
+    return branches;
 }
 
-+(NSArray<NSString *> *) gitTags {
+-(NSArray<NSString *> *) gitTags {
     
     NSString *log = [self executeShell:@"git tag -l"];
     NSArray<NSString *> *tags = [log componentsSeparatedByString:@"\n"];
+    tags = [tags arrayByRemovingLastObject];
     return tags;
 }
 
-+(NSArray<NSString *> *) gitRemotes {
+-(NSArray<NSString *> *) gitRemotes {
     
     NSString *log = [self executeShell:@"git remote"];
     NSArray<NSString *> *remotes = [log componentsSeparatedByString:@"\n"];
+    remotes = [remotes arrayByRemovingLastObject];
     return remotes;
 }
 
