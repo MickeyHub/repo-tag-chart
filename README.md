@@ -7,7 +7,7 @@ it's a Mac app to show line chart which x Axis shows tag name, and y Axis shows 
 sometimes, you find your project or your company's has been long time, and you want to see the diff between releases (anotated tag usually).
 
 ## Usage
-download latest Release to your local, open it by double-click, you will see
+download latest [Release](https://github.com/MickeyHub/repo-tag-chart/releases/download/v0.1.0/ProjectVersionChart.app.zip) to your local, open it by double-click, you will see
 
 ![](./DemoAssets/main.png)
 
