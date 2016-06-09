@@ -20,6 +20,9 @@ As tip said, you should choose one repo first, click path control on right left-
 
 ![](./DemoAssets/chart.png)
 
+## Getting Help
+ 1. If you have question, just file an issue.
+ 2. If you have an idea or suggestion, PR is more excited way.
 
 ## Licence
 The MIT License (MIT)
