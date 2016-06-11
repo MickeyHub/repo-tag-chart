@@ -16,7 +16,7 @@ download latest [Release](https://github.com/MickeyHub/repo-tag-chart/releases/d
 
 ![](./DemoAssets/main.png)
 
-As tip said, you should choose one repo first, click path control on right left-top corner, then you just click at `Generate` button, the chart will show below. like:
+As tip said, you should choose one repo first, click path control on left-top corner, then you just click at `Generate` button, the chart will show below. like:
 
 ![](./DemoAssets/chart.png)
 
